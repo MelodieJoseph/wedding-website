@@ -8,9 +8,21 @@ namespace WeddingGallery.Controllers
 {
     public class HarryPotterController : Controller
     {
-        public string Detail()
+        public ActionResult Detail()
         {
-            return "Hello from the Harry Potter Controller!";
+            if (DateTime.Today.DayOfWeek == DayOfWeek.Tuesday)
+            {
+                //return new RedirectResult("/");
+                return Redirect("/");
+            }
+
+            //return new ContentResult()
+            //{
+            //    Content = "Hello from the Harry Potter Controller!"
+            //};
+
+            return Content("Hello from the Harry Potter Controller!");
+
         }
     }
 }
