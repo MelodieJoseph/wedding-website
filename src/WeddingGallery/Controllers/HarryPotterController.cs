@@ -10,18 +10,7 @@ namespace WeddingGallery.Controllers
     {
         public ActionResult Detail()
         {
-            if (DateTime.Today.DayOfWeek == DayOfWeek.Tuesday)
-            {
-                //return new RedirectResult("/");
-                return Redirect("/");
-            }
-
-            //return new ContentResult()
-            //{
-            //    Content = "Hello from the Harry Potter Controller!"
-            //};
-
-            return Content("Hello from the Harry Potter Controller!");
+            return View();
 
         }
     }
