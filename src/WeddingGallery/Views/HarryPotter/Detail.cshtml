@@ -3,15 +3,7 @@
 @{
     Layout = null;
 
-    var whatsHappening = "Mel and Art's Harry Potter wedding!";
-    DateTime weddingDate = new DateTime(2019, 3, 10, 16, 0, 0);
-
-    var description = "You are cordially invited to the wedding of Artem Igorevich Shkumat and Melodie Laura Joseph <br /> We will be taking the Lebedev name"; 
-    var venues = new string[]
-    {
-        "Ceremony: St Patrick's Cathedral",
-        "Reception: TBC"
-    };
+   
 
 }
 
@@ -24,22 +16,22 @@
 </head>
 <body>
     <div>
-        <h1>@whatsHappening</h1>
+        <h1>@ViewBag.WhatsHappening</h1>
 
         <h3>The Deets:</h3>
         <div>
-            @Html.Raw(description)
+            @Html.Raw(ViewBag.Description)
         <br />
         <br />
     </div>
-    <div>@weddingDate</div>
+    <div>@ViewBag.WeddingDate</div>
 
-    @if (venues.Length > 0) //will only display if the array has values
+    @if (ViewBag.Venues.Length > 0) //will only display if the array has values
     {
     <h5>Location</h5>
     <div>
         <ul>
-            @foreach (var venue in venues)
+            @foreach (var venue in ViewBag.Venues)
             {
                <li>@venue</li>
             }
